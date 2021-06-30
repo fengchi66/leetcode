@@ -55,7 +55,26 @@ public class MergeTwoSortedLists{
  * }
  */
 class Solution {
+    // 合并两个有序链表
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        // 定义虚拟头节点
+        ListNode dummyHead = new ListNode(-1);
+        ListNode temp = dummyHead;
+
+        while (l1 != null && l2 != null) {
+            if (l1.val <= l2.val) {
+                temp.next = l1;
+                l1 = l1.next; // l1向后移动一位
+            } else {
+                temp.next = l2;
+                l2 = l2.next;
+            }
+            temp = temp.next;
+        }
+        // 此时完成了迭代，l1或者l2最多还有一个元素没有迭代到
+        temp.next = l1 == null ? l2 : l1;
+
+        return dummyHead.next;
 
     }
 }
