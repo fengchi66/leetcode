@@ -52,7 +52,30 @@ public class RemoveDuplicatesFromSortedListIi{
 class Solution {
 
 
+    // 删除排序链表中的重复元素 II
     public ListNode deleteDuplicates(ListNode head) {
+
+        if (head == null) return null;
+
+        // 定义虚拟头节点
+        ListNode dummy = new ListNode(-1, head);
+        dummy.next = head;
+        ListNode curr = dummy;
+
+        while (curr.next != null && curr.next.next != null) {
+            if (curr.next.val == curr.next.next.val) { // curr下一个节点值等于下下个节点值
+                // 记录重复节点的值
+                int a = curr.next.val;
+                while (curr.next != null && curr.next.val == a) {
+                    // 删除重复的节点
+                    curr.next = curr.next.next;
+                }
+            } else {
+                curr = curr.next;
+            }
+        }
+        return dummy.next;
+
 
     }
 }
