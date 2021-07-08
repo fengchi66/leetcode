@@ -54,19 +54,19 @@ public class InvertBinaryTree{
 class Solution {
     public TreeNode invertTree(TreeNode root) {
 
-        // 递归终止条件
         if (root == null) return null;
 
-        // 结点交换
-        TreeNode temp = root.left;
-        root.left = root.right;
-        root.right = temp;
+        TreeNode leftNode = invertTree(root.left);
+        TreeNode rightNode = invertTree(root.right);
 
-        invertTree(root.left);
-        invertTree(root.right);
+        root.left = rightNode;
+        root.right = leftNode;
 
         return root;
+
     }
+
+
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
