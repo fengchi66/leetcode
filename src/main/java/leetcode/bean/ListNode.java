@@ -1,6 +1,6 @@
-package leetcode.bean;
-
-
+//package leetcode.bean;
+//
+//
 //public class ListNode {
 //    public int val;
 //    public ListNode next;
@@ -17,4 +17,4 @@ package leetcode.bean;
 //        this.next = next;
 //    }
 //}
-
+//
