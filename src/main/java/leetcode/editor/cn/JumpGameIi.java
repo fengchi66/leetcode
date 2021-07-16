@@ -42,7 +42,9 @@ public class JumpGameIi {
         Solution solution = new JumpGameIi().new Solution();
 
         int[] nums = {2, 3, 1, 2, 4, 2, 3};
-        solution.jump(nums);
+//        int[] nums = {1};
+        System.out.println(solution.jump(nums));
+        System.out.println(solution.jump2(nums));
 
     }
 
@@ -56,7 +58,6 @@ public class JumpGameIi {
             int steps = 0;
             for (int i = 0; i < length - 1; i++) {
                 maxPosition = Math.max(maxPosition, i + nums[i]);
-                System.out.println(maxPosition);
 
                 // 到达上次跳跃能到达的右边界了
                 if (i == end) {
@@ -66,7 +67,34 @@ public class JumpGameIi {
             }
             return steps;
         }
+
+        // 使用递归
+        public int jump2(int[] nums) {
+            if (nums == null || nums.length == 0)
+                return 0;
+
+            return process(nums, 0, nums.length -1);
+        }
+
+        // 递归函数：表示从index位置出发，能到达最右边的最小次数
+        public int process(int[] nums, int index, int rest) {
+            // base case
+            if (index == nums.length - 1) // 不需要再跳了
+                return 0;
+
+            int ways = Integer.MAX_VALUE;
+            // 在index位置可以跳0到num[index]次
+            for (int i = 0; i < nums[i]; i++) {
+
+
+            }
+            return ways;
+
+        }
+
+
     }
+
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
