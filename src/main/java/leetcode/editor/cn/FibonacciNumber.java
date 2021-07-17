@@ -45,18 +45,82 @@ package leetcode.editor.cn;
 // Related Topics 递归 记忆化搜索 数学 动态规划 
 // 👍 289 👎 0
 
-public class FibonacciNumber{
+import java.time.temporal.Temporal;
+
+// 509 菲波拉契数
+public class FibonacciNumber {
     public static void main(String[] args) {
         Solution solution = new FibonacciNumber().new Solution();
 
     }
 
-//leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int fib(int n) {
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        // 递归
+        public int fib(int n) {
+
+            if (n == 1 || n == 2)
+                return 1;
+            return fib(n - 1) + fib(n - 2);
+
+        }
+
+        // 动态规划
+        public int fib2(int n) {
+
+            if (n == 0)
+                return 0;
+            if (n == 1 || n == 2)
+                return 1;
+
+            int[] dp = new int[n + 1];
+            // base case
+            dp[1] = dp[2] = 1;
+            // 第N项依赖于N-1和N-2项
+            for (int i = 3; i <= n; i++)
+                dp[i] = dp[i - 1] + dp[i - 2];
+
+            return dp[n];
+        }
+
+        // 动态规划
+        public int fib3(int n) {
+
+            if (n == 0)
+                return 0;
+            if (n == 1 || n == 2)
+                return 1;
+
+            int[] dp = new int[n + 1];
+            // base case
+            dp[1] = dp[2] = 1;
+            // 第N项依赖于N-1和N-2项
+            for (int i = 3; i <= n; i++)
+                dp[i] = dp[i - 1] + dp[i - 2];
+
+            return dp[n];
+        }
+
+        // 动态规划
+        public int fib4(int n) {
+            if (n == 0)
+                return 0;
+            if (n == 1 || n == 2)
+                return 1;
+
+            int pre = 1, cur = 1;
+            // 第N项依赖于N-1和N-2项
+            for (int i = 3; i <= n; i++) {
+                int temp = pre + cur;
+                // pre和cur都向后移动一位
+                pre = cur;
+                cur = temp;
+            }
+            // 最后将cur返回
+            return cur;
+        }
 
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

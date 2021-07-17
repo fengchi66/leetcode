@@ -55,6 +55,8 @@ package leetcode.editor.cn;
 // Related Topics 数组 分治 动态规划 
 // 👍 3417 👎 0
 
+import java.util.Arrays;
+
 public class MaximumSubarray{
     public static void main(String[] args) {
         Solution solution = new MaximumSubarray().new Solution();
@@ -89,6 +91,26 @@ class Solution {
 
         return Math.max(Math.max(p1, p2), Math.max(p3, p4));
     }
+
+    public int maxSubArray2(int[] nums) {
+        if (nums == null || nums.length ==0)
+            return 0;
+
+        int N = nums.length;
+        // dp[i]表示以nums[i]结尾的最大子序和
+        int[] dp = new int[N];
+        // base case
+        dp[0] = nums[0];
+
+        // 遍历数组,在位置时判断是否抛弃i之前的子串
+        for (int i = 1; i < N; i++) {
+            dp[i] = Math.max(nums[i] + dp[i-1], nums[i]);
+        }
+        // 返回dp数组的最大值
+        return Arrays.stream(dp).max().getAsInt();
+
+    }
+
 }
 //leetcode submit region end(Prohibit modification and deletion)
 

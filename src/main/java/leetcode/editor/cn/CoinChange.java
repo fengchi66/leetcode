@@ -53,47 +53,95 @@ package leetcode.editor.cn;
 // Related Topics 广度优先搜索 数组 动态规划 
 // 👍 1365 👎 0
 
-public class CoinChange{
+import javax.sound.midi.Soundbank;
+
+public class CoinChange {
     public static void main(String[] args) {
         Solution solution = new CoinChange().new Solution();
 
-    }
-
-//leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int coinChange(int[] coins, int amount) {
-
-        if (coins == null || coins.length == 0)
-            return -1;
-
-        return process(coins, 0, amount);
+        int[] arr = {1, 2, 5};
+        int aim = 11;
+        System.out.println(solution.coinChange(arr, aim));
 
     }
 
-    // rest表示还剩余的钱
-    // index表示到index位置
-    public int process(int[] coins, int index, int rest) {
-        // base case
-        if (rest < 0) return -1;
-        if (index == coins.length) return 0;
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public int coinChange(int[] coins, int amount) {
 
-        // 还有钱可以选
-        // 不选当前的钱
-        int p1 = process(coins, index + 1, rest);
+            if (coins == null || coins.length == 0)
+                return 0;
 
-        int p2 = 0;
-        int next = process(coins, index + 1, rest - coins[index]);
-//        if (next != -1)
-//            p2 =
-        return 0;
+            int ans = process(coins, 0, amount);
+            return ans == Integer.MAX_VALUE ? -1 : ans;
+        }
 
+        // 在index位置开始，所有的钱可以自由选择，凑齐刚好rest这么多钱
+        public int process(int[] coins, int index, int rest) {
+            // base case
+            if (rest < 0) // 无效
+                return Integer.MAX_VALUE;
+            if (index == coins.length) // 没有钱可以选了,且刚好rest==0
+                return rest == 0 ? 0 : Integer.MAX_VALUE;
 
+            int ans = Integer.MAX_VALUE;
+            // 在index位置，还有钱可以选，每张钱可以选0张或者多张,但剩余的钱不能超过rest
+            for (int zhang = 0; zhang * coins[index] <= rest; zhang++) {
+                int next = process(coins, index + 1, rest - zhang * coins[index]);
+                if (next != Integer.MAX_VALUE)
+                    ans = Math.min(ans, zhang + next);
+            }
+            return ans;
+        }
 
+        // 动态规划：在index位置开始，所有的钱可以自由选择，凑齐刚好rest这么多钱最少硬币数
+        public int coinChange2(int[] coins, int amount) {
+            if (coins == null || coins.length == 0)
+                return 0;
 
+            int N = coins.length;
+            int[][] dp = new int[N + 1][amount + 1];
+//        dp[N][0] = 0;
+            for (int j = 1; j <= amount; j++) {
+                dp[N][j] = Integer.MAX_VALUE;
+            }
+            for (int index = N - 1; index >= 0; index--) {
+                for (int rest = 0; rest <= amount; rest++) {
+                    int ans = Integer.MAX_VALUE;
+                    for (int zhang = 0; zhang * coins[index] <= rest; zhang++) {
+                        int next = dp[index + 1][rest - zhang * coins[index]];
+                        if (next != Integer.MAX_VALUE)
+                            ans = Math.min(ans, zhang + next);
+                    }
+                    dp[index][rest] = ans;
+                }
+
+            }
+            return dp[0][amount] == Integer.MAX_VALUE ? -1 : dp[0][amount];
+        }
+
+        public int coinChange3(int[] coins, int amount) {
+            if (coins == null || coins.length == 0)
+                return 0;
+
+            int N = coins.length;
+            int[][] dp = new int[N + 1][amount + 1];
+//        dp[N][0] = 0;
+            for (int j = 1; j <= amount; j++) {
+                dp[N][j] = Integer.MAX_VALUE;
+            }
+            for (int index = N - 1; index >= 0; index--) {
+                for (int rest = 0; rest <= amount; rest++) {
+                    if (rest - coins[index] >= 0 && dp[index][rest - coins[index]] != Integer.MAX_VALUE) {
+                        dp[index][rest] = Math.min(dp[index + 1][rest], dp[index][rest - coins[index]] + 1);
+                    }
+                }
+
+            }
+            return dp[0][amount] == Integer.MAX_VALUE ? -1 : dp[0][amount];
+        }
 
     }
-
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
