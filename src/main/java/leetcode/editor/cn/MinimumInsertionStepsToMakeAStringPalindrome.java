@@ -58,23 +58,39 @@ package leetcode.editor.cn;
 // 👍 103 👎 0
 
 // 1312. 让字符串成为回文串的最少插入次数
-public class MinimumInsertionStepsToMakeAStringPalindrome{
+public class MinimumInsertionStepsToMakeAStringPalindrome {
     public static void main(String[] args) {
         Solution solution = new MinimumInsertionStepsToMakeAStringPalindrome().new Solution();
 
     }
 
-//leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int minInsertions(String s) {
-        if (s == null || s.length() == 0)
-            return 0;
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public int minInsertions(String s) {
+            if (s == null || s.length() == 0)
+                return 0;
 
+            char[] arr = s.toCharArray();
+            int N = arr.length;
 
+            // 1. 定义二维dp数组，dp[L][R]表示：arr[L,R]范围内 成为回文串的最少插入次数
+            int[][] dp = new int[N][N];
 
+            // 2. base case
+            // 当L==R,自己就是一个回文串，不需要插入，返回0
 
+            // 3.状态转移方程
+            for (int i = N - 2; i >= 0; i--) {
+                for (int j = i + 1; j < N; j++) {
+                    if (arr[i] == arr[j]) // 左右变量字符相等，不要L、R继续缩小范围
+                        dp[i][j] = dp[i + 1][j - 1];
+                    else // 左右变量字符不相等，不要L或者不要R继续缩小范围，但次数加1
+                        dp[i][j] = Math.min(dp[i + 1][j], dp[i][j - 1]) + 1;
+                }
+            }
+            return dp[0][N-1];
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
