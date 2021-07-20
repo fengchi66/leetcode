@@ -42,40 +42,38 @@ package leetcode.editor.cn;
 // Related Topics 树 深度优先搜索 二叉树 
 // 👍 717 👎 0
 
-public class BalancedBinaryTree{
+public class BalancedBinaryTree {
     public static void main(String[] args) {
         Solution solution = new BalancedBinaryTree().new Solution();
 
     }
 
 //leetcode submit region begin(Prohibit modification and deletion)
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode() {}
- *     TreeNode(int val) { this.val = val; }
- *     TreeNode(int val, TreeNode left, TreeNode right) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
- * }
- */
-class Solution {
-    public boolean isBalanced(TreeNode root) {
 
-        return false;
+    /**
+     * Definition for a binary tree node.
+     * public class TreeNode {
+     * int val;
+     * TreeNode left;
+     * TreeNode right;
+     * TreeNode() {}
+     * TreeNode(int val) { this.val = val; }
+     * TreeNode(int val, TreeNode left, TreeNode right) {
+     * this.val = val;
+     * this.left = left;
+     * this.right = right;
+     * }
+     * }
+     */
+// 110: 判断一棵树是否是平衡二叉树
+    // 对任意一个子树而言，要知道它是不是
+    class Solution {
+        public boolean isBalanced(TreeNode root) {
 
+            return false;
 
-
+        }
     }
-
-
-
-}
 
 
 //leetcode submit region end(Prohibit modification and deletion)

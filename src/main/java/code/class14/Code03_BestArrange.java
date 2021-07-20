@@ -74,8 +74,7 @@ public class Code03_BestArrange {
                 max = Math.max(max, process(next, done + 1, programs[i].end));
             }
         }
-
-        return 0;
+        return max;
     }
 
     // 把i位置的会议删掉，返回一个新的数组
