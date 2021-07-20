@@ -30,7 +30,6 @@ public class LowestCommonAncestor {
             if (findA && findB)
                 ans = root;
         }
-
         return new Info(findA, findB, ans);
     }
 
