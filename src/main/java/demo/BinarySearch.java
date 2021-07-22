@@ -53,7 +53,7 @@ public class BinarySearch {
 
         int i = search(nums, 3);
 
-        int i1 = search(nums, 3, 1, nums.length - 1);
+        int i1 = search(nums, 3, 0, nums.length - 1);
 
     }
 
