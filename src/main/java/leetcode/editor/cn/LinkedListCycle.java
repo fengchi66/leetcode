@@ -55,6 +55,8 @@ package leetcode.editor.cn;
 // 👍 1105 👎 0
 
 
+import bean.ListNode;
+
 import java.util.HashSet;
 
 public class LinkedListCycle{

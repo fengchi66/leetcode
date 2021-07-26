@@ -40,6 +40,8 @@ package leetcode.editor.cn;
 // Related Topics 链表 双指针 
 // 👍 1424 👎 0
 
+import bean.ListNode;
+
 import java.time.Period;
 
 public class RemoveNthNodeFromEndOfList{

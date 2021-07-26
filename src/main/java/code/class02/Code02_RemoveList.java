@@ -1,5 +1,7 @@
 package code.class02;
 
+import bean.ListNode;
+
 // 删除链表给定的值
 public class Code02_RemoveList {
 

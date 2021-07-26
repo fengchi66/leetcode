@@ -15,6 +15,8 @@ package leetcode.editor.cn;
 // Related Topics 栈 递归 链表 双指针 
 // 👍 605 👎 0
 
+import bean.ListNode;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;

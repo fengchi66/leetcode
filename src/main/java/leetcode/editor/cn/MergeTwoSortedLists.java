@@ -37,6 +37,8 @@ package leetcode.editor.cn;
 // Related Topics 递归 链表 
 // 👍 1769 👎 0
 
+import bean.ListNode;
+
 public class MergeTwoSortedLists{
     public static void main(String[] args) {
         Solution solution = new MergeTwoSortedLists().new Solution();

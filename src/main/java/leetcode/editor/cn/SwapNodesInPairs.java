@@ -42,6 +42,7 @@ package leetcode.editor.cn;
 // Related Topics 递归 链表 
 // 👍 954 👎 0
 
+import bean.ListNode;
 import sun.plugin.dom.core.Node;
 
 public class SwapNodesInPairs{

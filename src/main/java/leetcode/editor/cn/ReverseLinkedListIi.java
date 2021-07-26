@@ -35,6 +35,8 @@ package leetcode.editor.cn;
 // Related Topics 链表 
 // 👍 937 👎 0
 
+import bean.ListNode;
+
 public class ReverseLinkedListIi{
     public static void main(String[] args) {
         Solution solution = new ReverseLinkedListIi().new Solution();

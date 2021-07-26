@@ -32,6 +32,8 @@ package leetcode.editor.cn;
 // Related Topics 链表 双指针 
 // 👍 647 👎 0
 
+import bean.ListNode;
+
 public class RemoveDuplicatesFromSortedListIi{
     public static void main(String[] args) {
         Solution solution = new RemoveDuplicatesFromSortedListIi().new Solution();

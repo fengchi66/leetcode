@@ -1,5 +1,7 @@
 package code.class02;
 
+import bean.ListNode;
+
 // 反转链表
 public class Code01_ReverseList {
 

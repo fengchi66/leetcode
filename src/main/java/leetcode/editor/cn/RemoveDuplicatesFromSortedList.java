@@ -33,6 +33,8 @@ package leetcode.editor.cn;
 // 👍 597 👎 0
 
 
+import bean.ListNode;
+
 public class RemoveDuplicatesFromSortedList{
     public static void main(String[] args) {
         Solution solution = new RemoveDuplicatesFromSortedList().new Solution();

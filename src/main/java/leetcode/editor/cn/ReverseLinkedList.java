@@ -44,6 +44,8 @@ package leetcode.editor.cn;
 // 👍 1811 👎 0
 
 
+import bean.ListNode;
+
 public class ReverseLinkedList {
     public static void main(String[] args) {
         Solution solution = new ReverseLinkedList().new Solution();
