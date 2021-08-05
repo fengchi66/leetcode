@@ -13,7 +13,7 @@ public class Code02_RemoveTopKNode {
         ListNode pre = dummyHead;
         ListNode cur = head;
 
-        // 先将cur向前移动K个节点
+        // 先将cur向前移动K个结点
         for (int i = 0; i < K; i++)
             cur = cur.next;
 
