@@ -1,6 +1,5 @@
 package code.class12;
 
-import scala.util.Right;
 
 /**
  * 判断二叉树是否是搜索二叉树

@@ -43,7 +43,6 @@ package leetcode.editor.cn;
 // 👍 954 👎 0
 
 import bean.ListNode;
-import sun.plugin.dom.core.Node;
 
 public class SwapNodesInPairs{
     public static void main(String[] args) {

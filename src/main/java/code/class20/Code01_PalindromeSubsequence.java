@@ -1,6 +1,5 @@
 package code.class20;
 
-import scala.reflect.internal.Trees;
 
 /**
  * 最长回文子序列的长度

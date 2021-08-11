@@ -1,6 +1,5 @@
 package code.class19;
 
-import scala.Int;
 
 /**
  * 最长公共子序列

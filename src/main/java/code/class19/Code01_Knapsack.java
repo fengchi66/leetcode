@@ -1,6 +1,5 @@
 package code.class19;
 
-import scala.Int;
 
 public class Code01_Knapsack {
 
