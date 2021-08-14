@@ -17,7 +17,6 @@ public class Solution46 {
         Queue<TreeNode> queue2 = new LinkedList<>();
 
         queue1.offer(root);
-
         while (!queue1.isEmpty()) {
             TreeNode node = queue1.poll();
 
