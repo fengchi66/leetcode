@@ -7,6 +7,7 @@ public class Solution49 {
 
     /**
      * 理解二叉树深度优先搜索的递归过程
+     * 这个题是一个自上而下的递归过程，类似于记忆化搜索
      */
     public int sumNumbers(TreeNode root) {
         return process(root, 0);
