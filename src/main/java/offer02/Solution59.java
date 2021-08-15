@@ -4,6 +4,7 @@ import java.util.PriorityQueue;
 
 // 剑指 Offer II 059. 数据流的第 K 大数值
 public class Solution59 {
+    // minHeap是一个最小堆，最多保存k个元素，堆顶元素就是第 k 大的元素
     private PriorityQueue<Integer> minHeap;
     private int size;
 
