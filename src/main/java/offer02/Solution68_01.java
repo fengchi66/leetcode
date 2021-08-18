@@ -2,7 +2,7 @@ package offer02;
 
 public class Solution68_01 {
 
-    // 二分查找
+    // 二分查找:并不是只有排序数组才能二分查找，要注意base case
     public int search(int[] nums, int target) {
         int left = 0;
         int right = nums.length - 1;
