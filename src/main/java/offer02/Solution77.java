@@ -15,7 +15,6 @@ public class Solution77 {
 
         head1 = sortList(head1);
         head2 = sortList(head2);
-
         // merge
         return merge(head1, head2);
     }
