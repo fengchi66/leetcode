@@ -18,7 +18,6 @@ public class Solution77 {
 
         // merge
         return merge(head1, head2);
-
     }
 
     // 将链表分为两半，并返回后半部分的头结点
