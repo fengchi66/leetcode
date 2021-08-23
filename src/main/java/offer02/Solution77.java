@@ -2,6 +2,8 @@ package offer02;
 
 import bean.ListNode;
 
+import java.util.HashMap;
+
 // 剑指 Offer II 077. 链表排序
 // TODO split递归调用栈的深度为O(logN),所以空间复杂度O(logN),leetcode不通过，待优化为O(1)
 public class Solution77 {
