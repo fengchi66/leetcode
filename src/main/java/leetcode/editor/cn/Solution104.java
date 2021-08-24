@@ -19,41 +19,41 @@ package leetcode.editor.cn;
 // Related Topics 树 深度优先搜索 广度优先搜索 二叉树 
 // 👍 949 👎 0
 
+import java.util.LinkedList;
+
 /**
  * date: 2021-08-23 21:59:02
  * title: 二叉树的最大深度
  */
-public class Solution104 {
-    public static void main(String[] args) {
-        Solution solution = new Solution104().new Solution();
-
+class Solution104 {
+    // DFS
+    public int maxDepth(TreeNode root) {
+        if (root == null) return 0;
+        int leftDepth = maxDepth(root.left);
+        int rightDepth = maxDepth(root.right);
+        return Math.max(leftDepth, rightDepth) + 1;
     }
 
-//leetcode submit region begin(Prohibit modification and deletion)
+    // BFS
+    public int maxDepth2(TreeNode root) {
+        if (root == null) return 0;
+        LinkedList<TreeNode> queue1 = new LinkedList<>();
+        LinkedList<TreeNode> queue2 = new LinkedList<>();
 
-    /**
-     * Definition for a binary tree node.
-     * public class TreeNode {
-     * int val;
-     * TreeNode left;
-     * TreeNode right;
-     * TreeNode() {}
-     * TreeNode(int val) { this.val = val; }
-     * TreeNode(int val, TreeNode left, TreeNode right) {
-     * this.val = val;
-     * this.left = left;
-     * this.right = right;
-     * }
-     * }
-     */
-    class Solution {
-        public int maxDepth(TreeNode root) {
-            if (root == null) return 0;
-            int leftDepth = maxDepth(root.left);
-            int rightDepth = maxDepth(root.right);
-            return Math.max(leftDepth, rightDepth) + 1;
+        queue1.offer(root);
+        int ans = 0;
+        while (!queue1.isEmpty()) {
+            TreeNode node = queue1.poll();
+            if (node.left != null) queue2.offer(node.left);
+            if (node.right != null) queue2.offer(node.right);
+
+            // 当前层遍历完了，ans +1
+            if (queue1.isEmpty()) {
+                queue1 = queue2;
+                queue2 = new LinkedList<>();
+                ans += 1;
+            }
         }
+        return ans;
     }
-//leetcode submit region end(Prohibit modification and deletion)
-
 }

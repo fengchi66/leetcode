@@ -443,6 +443,14 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/Solution102.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/Solution102.java" />
+              <option name="questionId" value="102" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/Solution104.java">
           <value>
             <LeetcodeEditor>
@@ -456,6 +464,14 @@
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/Solution124.java" />
               <option name="questionId" value="124" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/Solution199.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/Solution199.java" />
+              <option name="questionId" value="199" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -488,6 +504,14 @@
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/Solution5.java" />
               <option name="questionId" value="5" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/Solution513.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/Solution513.java" />
+              <option name="questionId" value="513" />
             </LeetcodeEditor>
           </value>
         </entry>

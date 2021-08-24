@@ -63,7 +63,7 @@ public class Solution43 {
         if (root == null)
             return ans;
 
-        // 先将root接入到队列
+        // 先将root加入到队列
         queue.offer(root);
 
         while (!queue.isEmpty()) {
