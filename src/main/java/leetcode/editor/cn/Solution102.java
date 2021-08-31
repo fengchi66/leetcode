@@ -81,4 +81,45 @@ public class Solution102 {
         }
         return ans;
     }
+
+    public List<List<Integer>> levelOrder2(TreeNode root) {
+
+        List<List<Integer>> ans = new LinkedList<>();
+        if (root == null) return ans;
+
+        // 存每一层的节点
+        List<Integer> mid = new ArrayList<>();
+        LinkedList<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+
+        // current记录当前遍历的这一层在队列中的节点数，next记录下一层在队列中的节点数
+        int current = 1;
+        int next = 0;
+
+        while (!queue.isEmpty()) {
+            // 每从队列中取出一个节点，就current--
+            TreeNode node = queue.poll();
+            mid.add(node.val);
+            current--;
+
+            // 下一层的节点加入队列，next++
+            if (node.left != null) {
+                queue.offer(node.left);
+                next++;
+            }
+            if (node.right != null) {
+                queue.offer(node.right);
+                next++;
+            }
+
+            // 当current == 0，说明当前层遍历完了，那么在遍历下一层之前，把next的值给current，next重新初始化
+            if (current == 0) {
+                current = next;
+                next = 0;
+                ans.add(mid);
+                mid = new ArrayList<>();
+            }
+        }
+        return ans;
+    }
 }
